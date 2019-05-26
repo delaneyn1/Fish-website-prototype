@@ -54,9 +54,19 @@ namespace MyCoreWebApp.Controllers
         {
             CustomerDataModel customer = new CustomerDataModel();
 
+            customer.customerId = GeneratePersonId();
+
+            //pass value from model into the view
             return View(customer);
         }
 
+        //ref - https://github.com/bchavez/Bogus#without-fluent-syntax
+        //Get a random toload as a new user's id. 
+        public int GeneratePersonId()
+        {
+            var random = new Randomizer();
+            return random.Number(1, 1000);
+        }
         [HttpPost]
         public ActionResult Create(CustomerDataModel customer)
         {
