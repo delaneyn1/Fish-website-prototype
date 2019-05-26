@@ -53,7 +53,7 @@ namespace MyCoreWebApp.Controllers
         public ActionResult Create()
         {
             CustomerDataModel customer = new CustomerDataModel();
-
+            ViewData["Message"] = new Faker().Lorem.Paragraph().ToString();
             customer.customerId = GeneratePersonId();
 
             //pass value from model into the view

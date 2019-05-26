@@ -2,6 +2,7 @@
 
 @{
     ViewData["Title"] = "Create";
+    string mycontent = ViewData["Message"].ToString();
 }
 
 
@@ -10,7 +11,7 @@
 <div class="jumbotron">
     <div class="container text-center">
         <h2>Create Customer Contact</h2>
-
+        <p>@mycontent</p>
     </div>
 </div>
 <hr />
