@@ -49,5 +49,19 @@ namespace MyCoreWebApp.Controllers
         {
             return View("Error", new ErrorViewModel { Message = "Sorry the customer you're looking for could not be found.", RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
         }
+    
+        public ActionResult Create()
+        {
+            CustomerDataModel customer = new CustomerDataModel();
+
+            return View(customer);
+        }
+
+        [HttpPost]
+        public ActionResult Create(CustomerDataModel customer)
+        {
+
+            return View("Index");
+        }
     }
 }
