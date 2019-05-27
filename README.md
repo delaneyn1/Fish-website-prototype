@@ -7,3 +7,7 @@
 
 # Framworks Ref
 * https://github.com/bchavez/Bogus
+
+# Other
+ * Sql data model and architecture diagrams will be done through [draw.io](https://www.draw.io)
+
