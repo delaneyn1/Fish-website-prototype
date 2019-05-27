@@ -2,6 +2,10 @@
 
   <PropertyGroup>
     <TargetFramework>netcoreapp2.0</TargetFramework>
+    <ApplicationIcon>wwwroot\customfavicon.ico</ApplicationIcon>
+    <StartupObject></StartupObject>
+    <Authors>Patrick Delaney; Nick Delaney</Authors>
+    <Company>Fish Tank Prototype</Company>
   </PropertyGroup>
 
   <ItemGroup>

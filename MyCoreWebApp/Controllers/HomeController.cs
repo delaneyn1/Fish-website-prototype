@@ -13,6 +13,7 @@ namespace MyCoreWebApp.Controllers
     {
         public IActionResult Index()
         {
+            ViewData["Message"] = new Faker().Lorem.Paragraph().ToString();
             return View();
         }
 
