@@ -19,7 +19,7 @@ namespace MyCoreWebApp.Controllers
 
         public IActionResult About()
         {
-            ViewData["Message"] = "The services we provide can go here";
+            ViewData["Message"] = "The services we provide can go here...";
 
             return View();
         }
