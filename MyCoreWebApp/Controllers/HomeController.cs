@@ -26,7 +26,7 @@ namespace MyCoreWebApp.Controllers
 
         public IActionResult Contact()
         {
-            ViewData["Message"] = "Fish contact page.";
+            ViewData["Message"] = "Fish contact page here.";
 
             return View();
         }
