@@ -11,7 +11,7 @@
 	
 # Framworks and external Ref
 * https://github.com/bchavez/Bogus
-* Icons made by <a href="https://www.flaticon.com/authors/those-icons" title="Those Icons">Those Icons</a> from <a href="https://www.flaticon.com/"
+* Icons made by <a href="https://www.flaticon.com/authors/those-icons" title="Those Icons">Those Icons</a> 
 * Logo's created by <a href="https://logohub.io/" title="LogoHub">Logo Hub</a>
 * Navbar built with <a href="https://work.smarchal.com/twbscolor/" title="twbscolor">twbscolor</a> 
 
