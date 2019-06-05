@@ -25,3 +25,12 @@
  3. select Fish-website-prototpe
  4. Pick a file with the draw extentsion
 
+# Service Request Notes 
+
+- HTML Helpers --> Implementing Dropdownlist in [Razor Example](https://www.tutorialsteacher.com/mvc/htmlhelper-dropdownlist-dropdownlistfor)
+	- TextArea and Radio button list within the same section 
+## Optional UI Refs
+- Review [Bootstrap Css Options](https://getbootstrap.com/docs/3.3/css/#buttons-options) for button colors
+- Panel to capture service request type details https://getbootstrap.com/docs/3.3/components/#panels-heading
+- Add [Glyphicons](https://getbootstrap.com/docs/3.3/components/#glyphicons) to inputs like Email
+- Add a [Jumbotron](https://getbootstrap.com/docs/3.3/components/#jumbotron) to the page
