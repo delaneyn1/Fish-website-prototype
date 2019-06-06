@@ -8,6 +8,41 @@
 
 <h4>Service Request</h4>
 <hr />
+<br />
+<div class="row">
+    <div class="col-md-12">
+        <h3>Request Type Descriptions</h3>
+        <table class="table-bordered table-responsive table-hover">
+            @*TABLE HEADERS*@
+            <tr>
+                <th class="text-center">
+                    @Html.DisplayNameFor(m => m.RequestTypeInformation.FirstOrDefault().RequestTypeId)
+                </th>
+                <th class="text-center">
+                    @Html.DisplayNameFor(m => m.RequestTypeInformation.FirstOrDefault().RequestName)
+                </th>
+                <th class="text-center">
+                    @Html.DisplayNameFor(m => m.RequestTypeInformation.FirstOrDefault().RequestDescription)
+                </th>
+            </tr>
+          @*List in table rows the request type information*@
+            @{
+
+                foreach (var item in Model.RequestTypeInformation)
+                {
+                   <tr>
+                       <td>@item.RequestTypeId</td>
+                       <td>@item.RequestName</td>
+                       <td>@item.RequestDescription</td>
+                   </tr>
+                }
+
+            }
+        </table>
+
+        </div>
+</div>
+<br />
 <div class="row">
     <div class="col-md-4">
         <form asp-action="Index">
