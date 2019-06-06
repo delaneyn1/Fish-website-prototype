@@ -34,3 +34,6 @@
 - Panel to capture service request type details https://getbootstrap.com/docs/3.3/components/#panels-heading
 - Add [Glyphicons](https://getbootstrap.com/docs/3.3/components/#glyphicons) to inputs like Email
 - Add a [Jumbotron](https://getbootstrap.com/docs/3.3/components/#jumbotron) to the page
+
+## Model binding 
+- [View example here](https://www.tutorialspoint.com/asp.net_mvc/asp.net_mvc_model_binding.htm)
