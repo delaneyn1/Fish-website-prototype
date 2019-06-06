@@ -37,3 +37,4 @@
 
 ## Model binding 
 - [View example here](https://www.tutorialspoint.com/asp.net_mvc/asp.net_mvc_model_binding.htm)
+- Create a post method for the form[View example here](https://www.tutorialsteacher.com/mvc/model-binding-in-asp.net-mvc)
