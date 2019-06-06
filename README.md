@@ -15,6 +15,10 @@
 * Logo's created by <a href="https://logohub.io/" title="LogoHub">Logo Hub</a>
 * Navbar built with <a href="https://work.smarchal.com/twbscolor/" title="twbscolor">twbscolor</a> 
 
+# Tracking Tasks, Bugs, and Hacks
+- Use [TODO Method](https://blogs.msdn.microsoft.com/zainnab/2013/08/15/visual-studio-2013-todo-comments-and-custom-tokens-in-the-task-list/) to keep tabs on tasks
+- view todo notes through the 'task list'...
+	- To configure in VS2017 go to View > Task List
 
 # Other
  * Sql data model and architecture diagrams will be done through [draw.io](https://www.draw.io)

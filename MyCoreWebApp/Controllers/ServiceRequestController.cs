@@ -8,7 +8,7 @@ namespace MyCoreWebApp.Controllers
 {
     public class ServiceRequestController : Controller
     {
-        public IActionResult Index()
+        public IActionResult Create()
         {
             return View();
         }
