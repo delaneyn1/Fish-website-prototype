@@ -42,3 +42,18 @@
 ## Model binding 
 - [View example here](https://www.tutorialspoint.com/asp.net_mvc/asp.net_mvc_model_binding.htm)
 - Create a post method for the form[View example here](https://www.tutorialsteacher.com/mvc/model-binding-in-asp.net-mvc)
+
+## Api's on Api's
+- GCP
+	- [Photo's api](https://developers.google.com/photos/)
+	- [Calendar api](https://developers.google.com/calendar/)
+- Azure
+	-Temporarily using [Azure AD Graph Api](https://docs.microsoft.com/en-us/previous-versions/azure/ad/graph/howto/azure-ad-graph-api-operations-overview) for b2c support
+		- Watch for major updates to Microsoft Graph Api [status updates](https://developer.microsoft.com/en-us/office/blogs/microsoft-graph-or-azure-ad-graph/) to upgrade app
+- Sendgrid
+	- Email [api service](https://sendgrid.com/docs/API_Reference/index.html)
+
+## Future Needs
+- High level solutions architecture documentation
+- High level topologies for Cloud Infrastructure, Security, Network, and micro services
+
