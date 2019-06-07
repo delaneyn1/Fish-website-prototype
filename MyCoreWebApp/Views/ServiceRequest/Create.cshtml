@@ -1,5 +1,5 @@
 ﻿@model MyCoreWebApp.Models.DataModels.ServiceRequestDataModel
-
+@using MyCoreWebApp.Models.DataModels;
 @{
     ViewData["Title"] = "Create";
 }
@@ -25,22 +25,22 @@
                     @Html.DisplayNameFor(m => m.RequestTypeInformation.FirstOrDefault().RequestDescription)
                 </th>
             </tr>
-          @*List in table rows the request type information*@
+            @*List in table rows the request type information*@
             @{
 
                 foreach (var item in Model.RequestTypeInformation)
                 {
-                   <tr>
-                       <td>@item.RequestTypeId</td>
-                       <td>@item.RequestName</td>
-                       <td>@item.RequestDescription</td>
-                   </tr>
+                    <tr>
+                        <td>@item.RequestTypeId</td>
+                        <td>@item.RequestName</td>
+                        <td>@item.RequestDescription</td>
+                    </tr>
                 }
 
             }
         </table>
 
-        </div>
+    </div>
 </div>
 <br />
 <div class="row">
@@ -63,6 +63,10 @@
                         <input asp-for="CustomerConsent" /> @Html.DisplayNameFor(model => model.CustomerConsent)
                     </label>
                 </div>
+                @*@Html.DropDownList("ServiceRequesttype", new SelectList(Model.ServiceRequesttype.).AsEnumerable<SelectListItem>(),,"Select Request Option", new { @class = "form-control" })*@
+                @Html.DropDownListFor(m => m.StudentGender,
+                   new SelectList(Enum.GetValues(typeof(Gender))),
+                   "Select Gender")
             </div>
             <div class="form-group">
                 <input type="submit" value="Create" class="btn btn-default" />
