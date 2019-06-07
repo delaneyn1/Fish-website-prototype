@@ -44,12 +44,15 @@
 - Create a post method for the form[View example here](https://www.tutorialsteacher.com/mvc/model-binding-in-asp.net-mvc)
 
 ## Api's on Api's
-- GCP
-	- [Photo's api](https://developers.google.com/photos/)
-	- [Calendar api](https://developers.google.com/calendar/)
-- Azure
-	-Temporarily using [Azure AD Graph Api](https://docs.microsoft.com/en-us/previous-versions/azure/ad/graph/howto/azure-ad-graph-api-operations-overview) for b2c support
-		- Watch for major updates to Microsoft Graph Api [status updates](https://developer.microsoft.com/en-us/office/blogs/microsoft-graph-or-azure-ad-graph/) to upgrade app
+* GCP
+	* [Photo's api](https://developers.google.com/photos/)
+	* [Calendar api](https://developers.google.com/calendar/)
+* Azure
+	* Temporarily using [Azure AD Graph Api](https://docs.microsoft.com/en-us/previous-versions/azure/ad/graph/howto/azure-ad-graph-api-operations-overview) for b2c support
+		* Watch for major updates to Microsoft Graph Api [status updates](https://developer.microsoft.com/en-us/office/blogs/microsoft-graph-or-azure-ad-graph/) to upgrade app
+	* Blob [REST api](https://docs.microsoft.com/en-us/rest/api/storageservices/blob-service-rest-api)
+	* Going serverless with [Functions](https://docs.microsoft.com/en-us/azure/azure-functions/functions-create-first-azure-function)
+	 	* For operational needs such as a nightly scanner aka cost management service
 - Sendgrid
 	- Email [api service](https://sendgrid.com/docs/API_Reference/index.html)
 
