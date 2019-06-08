@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.AspNetCore.Mvc.Rendering;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
@@ -46,7 +47,12 @@ namespace MyCoreWebApp.Models.DataModels
         [Display(Name = "Address")]
         public Address custAddr { get; set; }
 
+        [Required]
+        [Display(Name = "State")]
+        public string State { get; set; }
 
+        // This property will hold all available states for selection
+        public IEnumerable<SelectListItem> States { get; set; }
     }
 
     public class Address {

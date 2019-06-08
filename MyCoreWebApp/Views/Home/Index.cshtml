@@ -1,10 +1,11 @@
-﻿@{
+﻿@model MyCoreWebApp.Models.DataModels.CustomerDataModel
+@{
     ViewData["Title"] = "Home Page ";
 }
 
 <div class="jumbotron">
     <div class="container text-center">
-        <img src="~/images/logo1.png" class="img-responsive" title="SkeesLogo"/>
+        <img src="~/images/logo1.png" class="img-responsive" title="SkeesLogo" />
         <hr />
         <p>@ViewData["Message"]</p>
     </div>
@@ -47,5 +48,57 @@
             <li><a href="https://go.microsoft.com/fwlink/?LinkID=398609">Publish to Microsoft Azure Web Apps</a></li>
             <li>some list item<a href="#" target="_blank">push</a></li>
         </ul>
+        <hr />
+       
+       
+
+    </div>
+    <div class="col-md-6">
+        <div class="panel panel-primary">
+            <div class="panel-heading">
+                <h3 class="panel-title">Panel title</h3>
+            </div>
+            <div class="panel-body">
+                <div class="form-group">
+                    <label for="exampleInputEmail1">Email address</label>
+                    <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Email">
+                </div>
+                <div class="form-group">
+                    <label for="exampleInputPassword1">Password</label>
+                    <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+                </div>
+                @* State selection dropdown *@
+                <div class="form-group">
+                    @Html.LabelFor(m => m.State)
+                    @Html.DropDownListFor(m => m.State, // 1. Store selected value in Model.State;
+                                                        // when page is rendered after postback,
+                                                        // take selected value from Model.State.
+
+                           // 2. Take list of values from Model.States
+                           Model.States,
+
+                           // 3. Text for the first 'default' option
+                           "- Please select a state -",
+
+                           //4. A class name to assign to <select> tag
+                           new { @class = "form-control" })
+                </div>
+                <br />
+                <div class="text-center">
+                <button type="submit" class="btn btn-primary"><i class="glyphicon glyphicon-bitcoin"></i> Transfer Bitcoin</button>
+                    </div>
+            </div>
+        </div>
+        <div class="well-lg"><ul>
+    @{
+
+        foreach (var item in Model.States)
+        {
+            <li>@item.Value</li>
+        }
+
+    }
+</ul>
+        </div>
     </div>
 </div>

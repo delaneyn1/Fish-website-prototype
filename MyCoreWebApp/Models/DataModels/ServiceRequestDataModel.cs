@@ -35,8 +35,8 @@ namespace MyCoreWebApp.Models.DataModels
             ServiceRequesttype = Dropdown;
         }
         public Gender StudentGender { get; set; }
+        //TODO: Follow this article to create a clean dropdown list - https://nimblegecko.com/using-simple-drop-down-lists-in-ASP-NET-MVC/
 
-        //TODO: Populate list to form drop down controls.
         //TODO: Add Validation to properties using data annotations, value must be greater than 1 and required
         [DisplayName("Service Request Type")]
         public List<requestTypeOptions> ServiceRequesttype { get; set; }
