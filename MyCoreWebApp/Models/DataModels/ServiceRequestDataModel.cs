@@ -37,18 +37,24 @@ namespace MyCoreWebApp.Models.DataModels
         public Gender StudentGender { get; set; }
 
         //TODO: Populate list to form drop down controls.
-        //TODO: Add Validation to properties using data annotations, value must be greater than 1 and required
+        
         [DisplayName("Service Request Type")]
+        [Required(ErrorMessage ="please select a service type")]
         public List<requestTypeOptions> ServiceRequesttype { get; set; }
 
-        //TODO: Needs a min length validation added and display name
+        
+        [DisplayName("Service Description")]
+        [MinLength(1)]        
+        [Required(ErrorMessage = "Please enter a brief summary of the request")]
         public string ServiceRequestDescription { get; set; }
 
         //TODO: Set Default value to request date to be 3 days from current date time to close out bug
-        //TODO: Needs display name
+        
+        [DisplayName("Select a Date for Service")]
         [DataType(DataType.Date)]
         public DateTime IdealRequestDate { get; set; }
-        //TODO: Needs display name
+        
+        [DisplayName("Customer Consent")]
         public bool CustomerConsent { get; set; }
         //TODO: Add Validation to properties using data annotations and value can't be null
         //TODO: build list of some type to populate options

@@ -14,8 +14,9 @@ namespace MyCoreWebApp.Controllers
         public IActionResult Create()
         {
             //Instantiate model to generate request list
-            var model = new ServiceRequestDataModel();        
-            
+            var model = new ServiceRequestDataModel();
+            DateTime CurrentTime = DateTime.Now;
+            model.IdealRequestDate = CurrentTime.AddDays(3);
             //view name, object model
             return View("Create",model);
         }
