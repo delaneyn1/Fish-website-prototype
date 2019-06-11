@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 namespace MyCoreWebApp.Models.DataModels
 {
     //TODO: Review all controllers and classes and remove all un-used usings
-   
+
     //HACK: For PD; Need to move list builder to an interface and use dependancy injection
     //BUG: Datetime default value is invalid when rendoring create view. 
     public class ServiceRequestDataModel
@@ -37,27 +37,37 @@ namespace MyCoreWebApp.Models.DataModels
         public Gender StudentGender { get; set; }
 
         //TODO: Populate list to form drop down controls.
-        
+        //I dont know what list this is taklking about
         [DisplayName("Service Request Type")]
-        [Required(ErrorMessage ="please select a service type")]
+        [Required(ErrorMessage = "please select a service type")]
         public List<requestTypeOptions> ServiceRequesttype { get; set; }
 
-        
+
         [DisplayName("Service Description")]
-        [MinLength(1)]        
+        [MinLength(1)]
         [Required(ErrorMessage = "Please enter a brief summary of the request")]
         public string ServiceRequestDescription { get; set; }
 
         //TODO: Set Default value to request date to be 3 days from current date time to close out bug
-        
+
         [DisplayName("Select a Date for Service")]
         [DataType(DataType.Date)]
         public DateTime IdealRequestDate { get; set; }
+        //This is wrong but i tried
+        //[DateTime CurrentTime = DateTime.Now;]
+        //[Show CurrentTime.AddDays(3)]
+        
         
         [DisplayName("Customer Consent")]
         public bool CustomerConsent { get; set; }
         //TODO: Add Validation to properties using data annotations and value can't be null
-        //TODO: build list of some type to populate options
+        
+        public List<string> GeneralCheckup { get; set; }
+        public List<string> Maintenence { get; set; }
+        public List<string> Cleaning { get; set; }
+        public List<string> Equipment { get; set; }
+        public List<string> TankModification { get; set; }
+        public List<string> other { get; set; }
         public List<string> PreferredContactMethod { get; set; }
 
         public List<RequestDefinitions> RequestTypeInformation { get; set; }
