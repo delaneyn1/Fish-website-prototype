@@ -19,11 +19,13 @@ namespace MyCoreWebApp.Controllers
         {
             ViewData["Message"] = new Faker().Lorem.Paragraph().ToString();
             var list = GetAllStates();
-            var model = new CustomerDataModel();
-            model.States = GetSelectListItems(list);
+            var model = new HomeDataModel();
+            model.OurServicesList = GetSelectListItems(list);
+
+           
+            model.CardContentList = GetCardContent(list.Count());
 
 
-            
             return View(model);
         }
 
@@ -57,7 +59,8 @@ namespace MyCoreWebApp.Controllers
         {
             return new List<string>
             {
-                "ACT",
+                "Some value here",
+                "Another Value",
                 "New South Wales",
                 "Northern Territories",
                 "Queensland",
@@ -66,6 +69,24 @@ namespace MyCoreWebApp.Controllers
                 "Western Australia",
             };
         }
+
+        //Using faker class to build content for card body on the home page.
+        private IEnumerable<string> GetCardContent(int numberOfRants)
+        {
+            int i = 0;
+            List<string> contentlist = new List<string>();
+            //until we hit 0 keep building content for the card body example
+            while (numberOfRants > i)
+            {
+                //create a new string each loop and replace it to gain more content
+                string something = new Faker().Lorem.Sentence();
+                contentlist.Add(something);
+                //subtract one from rants
+                numberOfRants -= 1;
+            }
+            return contentlist;
+        }
+
         // This is one of the most important parts in the whole example.
         // This function takes a list of strings and returns a list of SelectListItem objects.
         // These objects are going to be used later in the SignUp.html template to render the

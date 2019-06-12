@@ -1,6 +1,7 @@
-﻿@model MyCoreWebApp.Models.DataModels.CustomerDataModel
+﻿@model MyCoreWebApp.Models.DataModels.HomeDataModel
 @{
     ViewData["Title"] = "Home Page ";
+    int i = 1;
 }
 
 <div class="jumbotron">
@@ -49,11 +50,11 @@
             <li>some list item<a href="#" target="_blank">push</a></li>
         </ul>
         <hr />
-       
-       
+
+
 
     </div>
-    <div class="col-md-6">
+    <div class="col-md-12">
         <div class="panel panel-primary">
             <div class="panel-heading">
                 <h3 class="panel-title">Panel title</h3>
@@ -69,36 +70,49 @@
                 </div>
                 @* State selection dropdown *@
                 <div class="form-group">
-                    @Html.LabelFor(m => m.State)
-                    @Html.DropDownListFor(m => m.State, // 1. Store selected value in Model.State;
-                                                        // when page is rendered after postback,
-                                                        // take selected value from Model.State.
+                    @Html.LabelFor(m => m.ServiceName)
+                    @Html.DropDownListFor(m => m.ServiceName, // 1. Store selected value in Model.State;
+                                                              // when page is rendered after postback,
+                                                              // take selected value from Model.State.
 
-                           // 2. Take list of values from Model.States
-                           Model.States,
+            // 2. Take list of values from Model.States
+            Model.OurServicesList,
 
-                           // 3. Text for the first 'default' option
-                           "- Please select a state -",
+            // 3. Text for the first 'default' option
+            "- Please select an Option -",
 
-                           //4. A class name to assign to <select> tag
-                           new { @class = "form-control" })
+            //4. A class name to assign to <select> tag
+            new { @class = "form-control" })
                 </div>
                 <br />
                 <div class="text-center">
-                <button type="submit" class="btn btn-primary"><i class="glyphicon glyphicon-bitcoin"></i> Transfer Bitcoin</button>
-                    </div>
+                    <button type="submit" class="btn btn-primary"><i class="glyphicon glyphicon-bitcoin"></i> Transfer Bitcoin</button>
+                </div>
             </div>
         </div>
-        <div class="well-lg"><ul>
-    @{
-
-        foreach (var item in Model.States)
-        {
-            <li>@item.Value</li>
-        }
-
-    }
-</ul>
-        </div>
+     </div>
+    <div class="col-md-12">
+        <h2>Basic Cards Example</h2>
+        <p>Not perfect but its a start...</p>
     </div>
-</div>
+        @foreach (var item in Model.CardContentList)
+        {
+   
+
+            <div class="col-md-4 col-sm-12">
+                <div class="panel panel-default">
+                    <div class="panel-body text-center">
+
+                        <h3 class="text-info">Header @i</h3>
+                        <hr />
+                        @item
+
+
+
+                    </div>
+                    </div>
+                </div>
+            i += 1;
+        }
+    </div>
+
