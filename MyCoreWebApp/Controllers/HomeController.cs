@@ -18,12 +18,12 @@ namespace MyCoreWebApp.Controllers
         public IActionResult Index()
         {
             ViewData["Message"] = new Faker().Lorem.Paragraph().ToString();
-            var list = GetAllStates();
+            var list = GetOurServices();
             var model = new HomeDataModel();
             model.OurServicesList = GetSelectListItems(list);
 
-           
-            model.CardContentList = GetCardContent(list.Count());
+
+            model.CardContentList = list;//GetCardContent(list.Count());
 
 
             return View(model);
@@ -55,18 +55,18 @@ namespace MyCoreWebApp.Controllers
         }
         // Just return a list of states - in a real-world application this would call
         // into data access layer to retrieve states from a database.
-        private IEnumerable<string> GetAllStates()
+        private IEnumerable<string> GetOurServices()
         {
             return new List<string>
             {
-                "Some value here",
-                "Another Value",
-                "New South Wales",
-                "Northern Territories",
-                "Queensland",
-                "South Australia",
-                "Victoria",
-                "Western Australia",
+                "Free Estimates",
+                "Commercial and Residential",
+                "Complete Cleaning and Maintenance",
+                "Trouble Shooting",
+                "Aquarium Moving",
+                "Full Water Test",
+                "Aquarium Removal",
+                "Complete Installations",
             };
         }
 

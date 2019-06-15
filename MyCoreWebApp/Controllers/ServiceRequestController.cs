@@ -15,8 +15,12 @@ namespace MyCoreWebApp.Controllers
         {
             //Instantiate model to generate request list
             var model = new ServiceRequestDataModel();
+
+            //Getting todays current date
             DateTime CurrentTime = DateTime.Now;
+            //Now set the ideal request date in the model to today + 3
             model.IdealRequestDate = CurrentTime.AddDays(3);
+
             //view name, object model
             return View("Create",model);
         }

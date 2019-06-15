@@ -48,12 +48,10 @@ namespace MyCoreWebApp.Models.DataModels
         [Required(ErrorMessage = "Please enter a brief summary of the request")]
         public string ServiceRequestDescription { get; set; }
 
-        //TODO: Set Default value to request date to be 3 days from current date time to close out bug
-
         [DisplayName("Select a Date for Service")]
         [DataType(DataType.Date)]
         public DateTime IdealRequestDate { get; set; }
-        //This is wrong but i tried
+        //TODO: Remove comments lines 56-58. This logic is done in the service request controller. Notes added to controller for context  This is wrong but i tried
         //[DateTime CurrentTime = DateTime.Now;]
         //[Show CurrentTime.AddDays(3)]
         
