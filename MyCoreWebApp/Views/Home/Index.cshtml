@@ -1,7 +1,10 @@
 ﻿@model MyCoreWebApp.Models.DataModels.HomeDataModel
 @{
     ViewData["Title"] = "Home Page ";
-    int i = 1;
+    //TODO: FOR ND - Replace the card section below with an Accordian to contain 'our services' using bootstrap - https://getbootstrap.com/docs/3.3/javascript/#collapse-example-accordion 
+    // **This can all be done within the view hard code the content. **
+    // Use the values in the GetOurServices() (home controller) for each group item title 
+    // Take the description per section from https://www.louisville-aquarium.com/aquarium-services.html
 }
 
 <div class="jumbotron">
@@ -12,27 +15,18 @@
     </div>
 </div>
 <div class="row"> 
-     
+    @*ADD Accordian HERE DELETE everything within the foreach statement below*@
         @foreach (var item in Model.CardContentList)
-        {
-   
-
+        { 
             <div class="col-md-4 col-sm-12">
                 <a href="#">
                 <div class="panel panel-default">
                     <div class="panel-body text-center">
-
-                        <h4 class="text-info"> @item</h4>
-                    
-                       
-
-
-
+                        <h4 class="text-info"> @item</h4>               
                     </div>
-                    </div>
-                 </a>
                 </div>
-          
+                 </a>
+                </div>          
         }
     </div>
 
