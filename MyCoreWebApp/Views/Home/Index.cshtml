@@ -15,18 +15,121 @@
     </div>
 </div>
 <div class="row"> 
-    @*ADD Accordian HERE DELETE everything within the foreach statement below*@
-        @foreach (var item in Model.CardContentList)
-        { 
-            <div class="col-md-4 col-sm-12">
-                <a href="#">
-                <div class="panel panel-default">
-                    <div class="panel-body text-center">
-                        <h4 class="text-info"> @item</h4>               
-                    </div>
+    
+    <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+        <div class="panel panel-default">
+            <div class="panel-heading" role="tab" id="headingOne">
+                <h4 class="panel-title">
+                    <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                        Free Estimates
+                    </a>
+                </h4>
+            </div>
+            <div id="collapseOne" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne">
+                <div class="panel-body">
+                    Before you make your decision, schedule a FREE consultation and allow us the opportunity to provide you with an estimate on your aquarium maintenance and new aquarium setup.
                 </div>
-                 </a>
-                </div>          
-        }
+            </div>
+        </div>
+        <div class="panel panel-default">
+            <div class="panel-heading" role="tab" id="headingTwo">
+                <h4 class="panel-title">
+                    <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                        Commercial and Residential
+                    </a>
+                </h4>
+            </div>
+            <div id="collapseTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
+                <div class="panel-body">
+                    Our professional and dependable services can be tailored to fit your particular needs. Weekly visits make your aquarium a hands-free experience, perfect for a waiting room or office-type setting. The biweekly or monthly programs let you choose the amount of involvement you wish to have.
+                </div>
+            </div>
+        </div>
+        <div class="panel panel-default">
+            <div class="panel-heading" role="tab" id="headingThree">
+                <h4 class="panel-title">
+                    <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                        Complete Cleaning and Maintenance
+                    </a>
+                </h4>
+            </div>
+            <div id="collapseThree" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree">
+                <div class="panel-body">
+                    Good cleaning and maintenance practices lead to a healthy and long-lasting aquarium. Our aquarium cleaning and maintenance service includes a health check on all tank fish, all necessary water tests and water changes, substrate vacuuming, tank cleaning inside & out, complete filter cleaning & changing and equipment check. We also offer on-site emergency service.
+                </div>
+            </div>
+        </div>
+        <div class="panel panel-default">
+            <div class="panel-heading" role="tab" id="headingFour">
+                <h4 class="panel-title">
+                    <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+                        Trouble Shooting
+                    </a>
+                </h4>
+            </div>
+            <div id="collapseFour" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingFour">
+                <div class="panel-body">
+                    We can easily and effectively troubleshoot any issues or problems you are having with your aquarium. Whether you want to know why your light fixture went out or how to fix that pesky problem of cloudy water, we can help. No problem is too small or too big for us to handle.
+                </div>
+            </div>
+        </div>
+        <div class="panel panel-default">
+            <div class="panel-heading" role="tab" id="headingFive">
+                <h4 class="panel-title">
+                    <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
+                        Aquarium Moving
+                    </a>
+                </h4>
+            </div>
+            <div id="collapseFive" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingFive">
+                <div class="panel-body">
+                    We can take care of any relocation for you; whether from one room to another, city to city in or to another state, we can relocate your aquarium.  We will break down your aquarium and the filtration system.  We will handle your fish, live rock and coral for you.  We will set up your aquarium at the new location, safely and soundly and make sure your system is running smoothly before we leave.
+                </div>
+            </div>
+        </div>
+        <div class="panel panel-default">
+            <div class="panel-heading" role="tab" id="headingSix">
+                <h4 class="panel-title">
+                    <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseSix" aria-expanded="false" aria-controls="collapseSix">
+                        Full Water Test
+                    </a>
+                </h4>
+            </div>
+            <div id="collapseSix" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingSix">
+                <div class="panel-body">
+                    Keeping tropical fish healthy in an enclosed environment involves not only regular maintenance of your aquarium, but also consistent water quality analysis.
+                </div>
+            </div>
+        </div>
+        <div class="panel panel-default">
+            <div class="panel-heading" role="tab" id="headingSeven">
+                <h4 class="panel-title">
+                    <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseSeven" aria-expanded="false" aria-controls="collapseSeven">
+                        Aquarium Removal
+                    </a>
+                </h4>
+            </div>
+            <div id="collapseSeven" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingSeven">
+                <div class="panel-body">
+                    Whatever the reason, we can fully remove an aquarium from your home or business without any fuss or disruption to your normal routine.
+                </div>
+            </div>
+        </div>
+        <div class="panel panel-default">
+            <div class="panel-heading" role="tab" id="headingEight">
+                <h4 class="panel-title">
+                    <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseEight" aria-expanded="false" aria-controls="collapseEight">
+                        Complete Installations
+                    </a>
+                </h4>
+            </div>
+            <div id="collapseEight" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingEight">
+                <div class="panel-body">
+                    We can install custom fish aquariums or standard designs in your home or business. We provide all necessary supplies, including tank fish and aquarium accessories. We offer all types of aquarium installations, including freshwater, saltwater and reef.
+                </div>
+            </div>
+        </div>
+
+    </div>
     </div>
 

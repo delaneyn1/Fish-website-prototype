@@ -18,7 +18,7 @@ namespace MyCoreWebApp.Controllers
 
             //Getting todays current date
             DateTime CurrentTime = DateTime.Now;
-            //Now set the ideal request date in the model to today + 3
+            
             model.IdealRequestDate = CurrentTime.AddDays(3);
 
             //view name, object model

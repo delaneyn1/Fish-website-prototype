@@ -51,9 +51,7 @@ namespace MyCoreWebApp.Models.DataModels
         [DisplayName("Select a Date for Service")]
         [DataType(DataType.Date)]
         public DateTime IdealRequestDate { get; set; }
-        //TODO: Remove comments lines 56-58. This logic is done in the service request controller. Notes added to controller for context  This is wrong but i tried
-        //[DateTime CurrentTime = DateTime.Now;]
-        //[Show CurrentTime.AddDays(3)]
+        
         
         
         [DisplayName("Customer Consent")]
