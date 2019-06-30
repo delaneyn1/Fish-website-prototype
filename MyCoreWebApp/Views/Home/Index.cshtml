@@ -1,9 +1,9 @@
 ﻿@model MyCoreWebApp.Models.DataModels.HomeDataModel
 @{
     ViewData["Title"] = "Home Page ";
-     
+
     // **This can all be done within the view hard code the content. **
-    // Use the values in the GetOurServices() (home controller) for each group item title 
+    // Use the values in the GetOurServices() (home controller) for each group item title
     // Take the description per section from https://www.louisville-aquarium.com/aquarium-services.html
 }
 
@@ -14,8 +14,8 @@
         <p>@ViewData["Message"]</p>
     </div>
 </div>
-<div class="row"> 
-    
+<div class="row">
+
     <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
         <div class="panel panel-default">
             <div class="panel-heading" role="tab" id="headingOne">
@@ -131,5 +131,27 @@
         </div>
 
     </div>
-    </div>
+</div>
 
+@*// demo section below*@
+<h3><b>Forms - HTTPGET Method</b></h3>
+@using (Html.BeginForm("Submit", "Home", FormMethod.Post))
+{
+    <table>
+        <tr>
+            <td>Enter ID: </td>
+            <td>@Html.TextBox("Id")</td>
+        </tr>
+        <tr>
+            <td>Enter Name: </td>
+            <td>@Html.TextBox("Name")</td>
+        </tr>
+        <tr>
+            <td colspan="2"><input type="submit" value="Submit"></td>
+        </tr>
+    </table>
+}
+<h4 style="color:purple">
+    ID: @ViewBag.Id<br />
+    Name: @ViewBag.Name<br />
+</h4>
