@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.AspNetCore.Mvc;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
@@ -7,6 +8,7 @@ using System.Threading.Tasks;
 
 namespace MyCoreWebApp.Models.DataModels
 {
+  
     //TODO: Review all controllers and classes and remove all un-used usings
 
     //HACK: For PD; Need to move list builder to an interface and use dependancy injection
@@ -36,7 +38,7 @@ namespace MyCoreWebApp.Models.DataModels
         }
         public Gender StudentGender { get; set; }
 
-        //TODO: Populate list to form drop down controls.
+        
         //I dont know what list this is taklking about
         [DisplayName("Service Request Type")]
         [Required(ErrorMessage = "please select a service type")]
@@ -68,6 +70,7 @@ namespace MyCoreWebApp.Models.DataModels
 
         public List<RequestDefinitions> RequestTypeInformation { get; set; }
     }
+
     public class RequestDefinitions
     {
         [Display(Name = "Option")]

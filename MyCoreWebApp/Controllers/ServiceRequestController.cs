@@ -9,6 +9,15 @@ namespace MyCoreWebApp.Controllers
 {
     public class ServiceRequestController : Controller
     {
+        [HttpPost]
+        public ActionResult Submit(int Id, string name)
+        {
+            ViewBag.Id = Id;
+            ViewBag.Name = name;
+            
+            return View("Create");
+        }
+
         //TODO: create form post of the create method to capture user input. 
         [HttpGet]
         public IActionResult Create()

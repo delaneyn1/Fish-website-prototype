@@ -16,13 +16,7 @@ namespace MyCoreWebApp.Controllers
 {
     public class HomeController : Controller
     {
-        [HttpPost]
-        public ActionResult Submit(int Id, string name)
-        {
-            ViewBag.Id = Id;
-            ViewBag.Name = name;
-            return View("Index");
-        }
+        
 
         public IActionResult Index()
         {
