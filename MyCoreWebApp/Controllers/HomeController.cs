@@ -9,6 +9,7 @@ using Bogus;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using MyCoreWebApp.Models.DataModels;
 using Microsoft.AspNetCore.Http;
+using Microsoft.Extensions.Configuration;
 
 //TODO: Models/Views/Controllers needed for Services, Images 
 
@@ -16,11 +17,25 @@ namespace MyCoreWebApp.Controllers
 {
     public class HomeController : Controller
     {
-        
+        public string KeyVaultValue { get; set; }
+
+        private readonly IConfiguration _configuration = null;
+
+        public HomeController(IConfiguration configuration)
+        {
+            _configuration = configuration;
+
+        }
+        public void OnGet()
+        {
+            KeyVaultValue = "My key val = " + _configuration["AppSecret"];
+        }
 
         public IActionResult Index()
         {
-            ViewData["Message"] = new Faker().Lorem.Paragraph().ToString();
+
+            ViewData["Message"] = "My key val = " + _configuration["AppSecret"];
+
             var list = GetOurServices();
             var model = new HomeDataModel();
             model.OurServicesList = GetSelectListItems(list);
