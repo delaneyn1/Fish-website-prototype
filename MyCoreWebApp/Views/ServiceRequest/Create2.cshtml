@@ -1,0 +1,57 @@
+﻿@model MyCoreWebApp.Models.DataModels.ServiceRequestDataModel
+
+@{
+    ViewData["Title"] = "Create2";
+}
+
+<h2>Create2</h2>
+
+@*// demo section below*@
+<h3><b>Forms - HTTPGET Method</b></h3>
+@using (Html.BeginForm("Create2", "ServiceRequest", FormMethod.Post))
+{
+    <table>
+        <tr>
+            <td>Enter ID: </td>
+            <td>@Html.TextBox("RequestTypeId")</td>
+        </tr>
+        <tr>
+            <td>Enter Name: </td>
+            <td>@Html.TextBox("RequestName")</td>
+        </tr>
+        <tr>
+            <td colspan="2"><input type="submit" value="Submit"></td>
+        </tr>
+    </table>
+    <div class="form-group">
+        <label asp-for="ServiceRequestDescription" class="control-label"></label>
+        <input asp-for="ServiceRequestDescription" class="form-control" />
+        <span asp-validation-for="ServiceRequestDescription" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="Email" class="control-label"></label>
+        <input asp-for="Email" class="form-control" />
+        <span asp-validation-for="Email" class="text-danger"></span>
+    </div>
+
+    @Html.CheckBox("CustomerConsent", true)
+}
+
+<h1> Results</h1>
+<h4 style="color:purple">
+    @Html.DisplayNameFor(m => m.RequestTypeInformation.FirstOrDefault().RequestTypeId)<br />
+    @Html.DisplayFor(m => m.RequestTypeInformation.FirstOrDefault().RequestTypeId)
+    @Html.DisplayNameFor(m => m.RequestTypeInformation.FirstOrDefault().RequestName)<br />
+    @Html.DisplayFor(m => m.RequestTypeInformation.FirstOrDefault().RequestName)
+    @Html.DisplayNameFor(m => m.RequestTypeInformation.FirstOrDefault().RequestDescription)<br />
+    @Html.DisplayFor(m => m.RequestTypeInformation.FirstOrDefault().RequestDescription)
+    @Html.DisplayNameFor(m => m.Email)<br />
+    @Html.DisplayFor(m => m.Email)
+    @Html.DisplayNameFor(m => m.CustomerConsent)<br />
+    @Html.DisplayFor(m => m.CustomerConsent)
+</h4>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

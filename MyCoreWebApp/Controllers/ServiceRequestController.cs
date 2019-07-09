@@ -9,14 +9,7 @@ namespace MyCoreWebApp.Controllers
 {
     public class ServiceRequestController : Controller
     {
-        [HttpPost]
-        public ActionResult Submit(int Id, string name)
-        {
-            ViewBag.Id = Id;
-            ViewBag.Name = name;
-            
-            return View("Create");
-        }
+        
 
         //TODO: create form post of the create method to capture user input. 
         [HttpGet]
@@ -32,6 +25,26 @@ namespace MyCoreWebApp.Controllers
 
             //view name, object model
             return View("Create",model);
+        }
+
+        public IActionResult Create2(string ServiceRequestDescription, int RequestTypeId, string RequestName, string Email, bool CustomerConsent)
+        {
+            //Instantiate model to generate request list
+            var model = new ServiceRequestDataModel();
+
+            model.ServiceRequestDescription = ServiceRequestDescription;
+            model.Email = Email;
+            model.CustomerConsent = CustomerConsent;
+            model.RequestTypeInformation.Select(x => x.RequestTypeId == RequestTypeId);
+            model.RequestTypeInformation.Where(x => x.RequestTypeId == RequestTypeId).Select(x => x.RequestName);
+
+            //Getting todays current date
+            DateTime CurrentTime = DateTime.Now;
+
+            model.IdealRequestDate = CurrentTime.AddDays(3);
+
+            //view name, object model
+            return View("Create2", model);
         }
     }
 }
