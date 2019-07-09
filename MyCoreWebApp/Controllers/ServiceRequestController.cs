@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
+using MyCoreWebApp.Models;
 using MyCoreWebApp.Models.DataModels;
 //Used for customers to submit work orders
 namespace MyCoreWebApp.Controllers
@@ -27,21 +28,23 @@ namespace MyCoreWebApp.Controllers
             return View("Create",model);
         }
 
-        public IActionResult Create2(string ServiceRequestDescription, int RequestTypeId, string RequestName, string Email, bool CustomerConsent)
+        public IActionResult Create2(string ServiceDescription, int RequestTypeId, string RequestName, string Email, bool CustomerConsent)
         {
             //Instantiate model to generate request list
-            var model = new ServiceRequestDataModel();
+            var model = new ServiceRequestViewModel();
 
-            model.ServiceRequestDescription = ServiceRequestDescription;
+            model.ServiceDescription = ServiceDescription;
             model.Email = Email;
-            model.CustomerConsent = CustomerConsent;
-            model.RequestTypeInformation.Select(x => x.RequestTypeId == RequestTypeId);
-            model.RequestTypeInformation.Where(x => x.RequestTypeId == RequestTypeId).Select(x => x.RequestName);
+            model.CheckBox = CustomerConsent;
+            model.Id = RequestTypeId;
+            model.Name = RequestName;
+            //model.RequestTypeInformation.Select(x => x.RequestTypeId == RequestTypeId);
+            //model.RequestTypeInformation.Where(x => x.RequestTypeId == RequestTypeId).Select(x => x.RequestName);
 
             //Getting todays current date
-            DateTime CurrentTime = DateTime.Now;
+            //DateTime CurrentTime = DateTime.Now;
 
-            model.IdealRequestDate = CurrentTime.AddDays(3);
+            //model.IdealRequestDate = CurrentTime.AddDays(3);
 
             //view name, object model
             return View("Create2", model);
