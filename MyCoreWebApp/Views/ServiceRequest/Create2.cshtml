@@ -1,0 +1,81 @@
+﻿@model MyCoreWebApp.Models.ServiceRequestViewModel
+
+@{
+    ViewData["Title"] = "Create2";
+}
+
+<h2>Create2</h2>
+
+@*// demo section below*@
+<h3><b>Forms - HTTPGET Method</b></h3>
+@using (Html.BeginForm("Create2", "ServiceRequest", FormMethod.Post))
+{
+    <table>
+        <tr>
+            <td>Enter ID: </td>
+            <td>@Html.TextBox("RequestTypeId")</td>
+        </tr>
+        <tr>
+            <td>Enter Name: </td>
+            <td>@Html.TextBox("RequestName")</td>
+        </tr>
+        <tr>
+            @*<td colspan="2"><input type="submit" value="Submit"></td>*@
+        </tr>
+    </table>
+    <div class="form-group">
+        <label asp-for="ServiceDescription" class="control-label"></label>
+        <input asp-for="ServiceDescription" class="form-control" />
+        <span asp-validation-for="ServiceDescription" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="Email" class="control-label"></label>
+        <input asp-for="Email" class="form-control" />
+        <span asp-validation-for="Email" class="text-danger"></span>
+    </div>
+
+
+    @Html.CheckBox("CustomerConsent", true) <br />
+
+    <div class="form-group">
+        @Html.LabelFor(m => m.RequestTypeDdl)
+        @Html.DropDownListFor(m => m.RequestType, // 1. Store selected value in Model.RequestType;
+                                            // when page is rendered after postback,
+                                            // take selected value from Model.State.
+
+               // 2. Take list of values from Model.States
+               Model.RequestTypeDdl,
+
+               // 3. Text for the first 'default' option
+               "- Please select an option -",
+
+               //4. A class name to assign to <select> tag
+               new { @class = "form-control" })
+    </div>
+
+    <br />
+    <input class="btn btn-default" type="submit" value="submit">
+}
+
+    <hr />
+<h1 class="text-success"> Results</h1>
+<h4 style="color:purple">
+    @Html.DisplayNameFor(m => m.Email)<br />
+    @Html.DisplayFor(m => m.Email)
+    @Html.DisplayNameFor(m => m.ServiceDescription)<br />
+    @Html.DisplayFor(m => m.ServiceDescription)
+    @Html.DisplayNameFor(m => m.Id)<br />
+    @Html.DisplayFor(m => m.Id)
+    @Html.DisplayNameFor(m => m.Name)<br />
+    @Html.DisplayFor(m => m.Name)
+    @Html.DisplayNameFor(m => m.CheckBox)<br />
+    @Html.DisplayFor(m => m.CheckBox) <br />
+    @Html.DisplayNameFor(m => m.RequestType) (selected)<br />
+    @Html.DisplayFor(m => m.RequestType)
+
+</h4>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

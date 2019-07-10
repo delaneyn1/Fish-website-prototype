@@ -6,16 +6,32 @@
     <StartupObject></StartupObject>
     <Authors>Patrick Delaney; Nick Delaney</Authors>
     <Company>Fish Tank Prototype</Company>
+    <UserSecretsId>63b4b37b-5f29-4d8d-a102-a75309624b95</UserSecretsId>
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Bogus" Version="26.0.2" />
-    <PackageReference Include="Microsoft.AspNetCore.All" Version="2.0.6" />
-    <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="2.0.3" />
+    <Compile Remove="obj\**" />
+    <Content Remove="obj\**" />
+    <EmbeddedResource Remove="obj\**" />
+    <None Remove="obj\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Bogus" Version="28.0.2" />
+    <PackageReference Include="Microsoft.AspNetCore.All" Version="2.0.9" />
+    <PackageReference Include="Microsoft.Azure.KeyVault" Version="3.0.3" />
+    <PackageReference Include="Microsoft.Azure.Services.AppAuthentication" Version="1.2.0" />
+    <PackageReference Include="Microsoft.NETCore.Platforms" Version="2.2.1" />
+    <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="2.0.4" />
   </ItemGroup>
 
   <ItemGroup>
     <DotNetCliToolReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Tools" Version="2.0.3" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="bin\Debug\netcoreapp2.0\" />
+    <Folder Include="bin\Release\netcoreapp2.0\" />
   </ItemGroup>
 
 </Project>

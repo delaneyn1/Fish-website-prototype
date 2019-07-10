@@ -53,9 +53,10 @@ namespace MyCoreWebApp.Models.DataModels
         [DisplayName("Select a Date for Service")]
         [DataType(DataType.Date)]
         public DateTime IdealRequestDate { get; set; }
-        
-        
-        
+
+        public string Email { get; set; }
+
+
         [DisplayName("Customer Consent")]
         public bool CustomerConsent { get; set; }
         //TODO: Add Validation to properties using data annotations and value can't be null
