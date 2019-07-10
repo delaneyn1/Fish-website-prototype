@@ -36,11 +36,30 @@
     </div>
 
 
-    @Html.CheckBox("CustomerConsent", true)
-    <input class="btn btn-default" type="submit" value="Submit">
+    @Html.CheckBox("CustomerConsent", true) <br />
+
+    <div class="form-group">
+        @Html.LabelFor(m => m.RequestTypeDdl)
+        @Html.DropDownListFor(m => m.RequestType, // 1. Store selected value in Model.RequestType;
+                                            // when page is rendered after postback,
+                                            // take selected value from Model.State.
+
+               // 2. Take list of values from Model.States
+               Model.RequestTypeDdl,
+
+               // 3. Text for the first 'default' option
+               "- Please select an option -",
+
+               //4. A class name to assign to <select> tag
+               new { @class = "form-control" })
+    </div>
+
+    <br />
+    <input class="btn btn-default" type="submit" value="submit">
 }
 
-<h1> Results</h1>
+    <hr />
+<h1 class="text-success"> Results</h1>
 <h4 style="color:purple">
     @Html.DisplayNameFor(m => m.Email)<br />
     @Html.DisplayFor(m => m.Email)
@@ -51,7 +70,9 @@
     @Html.DisplayNameFor(m => m.Name)<br />
     @Html.DisplayFor(m => m.Name)
     @Html.DisplayNameFor(m => m.CheckBox)<br />
-    @Html.DisplayFor(m => m.CheckBox)
+    @Html.DisplayFor(m => m.CheckBox) <br />
+    @Html.DisplayNameFor(m => m.RequestType) (selected)<br />
+    @Html.DisplayFor(m => m.RequestType)
 
 </h4>
 

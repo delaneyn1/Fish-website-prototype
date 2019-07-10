@@ -15,22 +15,26 @@ namespace MyCoreWebApp
 
        
         public static IWebHost BuildWebHost(string[] args) =>
-                  WebHost.CreateDefaultBuilder(args)
-                      .ConfigureAppConfiguration((ctx, builder) =>
-                      {
-                          var keyVaultEndpoint = GetKeyVaultEndpoint();
-                          if (!string.IsNullOrEmpty(keyVaultEndpoint))
-                          {
-                              var azureServiceTokenProvider = new AzureServiceTokenProvider();
-                              var keyVaultClient = new KeyVaultClient(
-                                  new KeyVaultClient.AuthenticationCallback(
-                                      azureServiceTokenProvider.KeyVaultTokenCallback));
-                              builder.AddAzureKeyVault(
-                                  keyVaultEndpoint, keyVaultClient, new DefaultKeyVaultSecretManager());
-                          }
-                      }
-                   ).UseStartup<Startup>()
-                    .Build();
+              WebHost.CreateDefaultBuilder(args)
+                .UseStartup<Startup>()
+                .Build();
+        //KEEP FOR LATER
+        //WebHost.CreateDefaultBuilder(args)
+        //    .ConfigureAppConfiguration((ctx, builder) =>
+        //    {
+        //        var keyVaultEndpoint = GetKeyVaultEndpoint();
+        //        if (!string.IsNullOrEmpty(keyVaultEndpoint))
+        //        {
+        //            var azureServiceTokenProvider = new AzureServiceTokenProvider();
+        //            var keyVaultClient = new KeyVaultClient(
+        //                new KeyVaultClient.AuthenticationCallback(
+        //                    azureServiceTokenProvider.KeyVaultTokenCallback));
+        //            builder.AddAzureKeyVault(
+        //                keyVaultEndpoint, keyVaultClient, new DefaultKeyVaultSecretManager());
+        //        }
+        //    }
+        // ).UseStartup<Startup>()
+        //  .Build();
 
         private static string GetKeyVaultEndpoint() => "https://kv-usc-beta.vault.azure.net";
     }
