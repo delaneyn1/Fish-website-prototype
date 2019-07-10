@@ -14,8 +14,6 @@ namespace MyCoreWebApp.Controllers
         {
             ViewBag.Id = Id;
             ViewBag.Name = name;
-            ViewBag.Phone = phone;
-            ViewBag.Email = Email;
             
             return View("Create");
         }
