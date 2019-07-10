@@ -4,10 +4,10 @@
     ViewData["Title"] = "Create2";
 }
 
-<h2>Create2</h2>
+<h2>Create2 service page</h2>
 
 @*// demo section below*@
-<h3><b>Forms - HTTPGET Method</b></h3>
+<h3><b>Please fill out the form for your service request</b></h3>
 @using (Html.BeginForm("Create2", "ServiceRequest", FormMethod.Post))
 {
     <table>
@@ -59,8 +59,8 @@
 }
 
     <hr />
-<h1 class="text-success"> Results</h1>
-<h4 style="color:purple">
+<h1 class="text-success"> Results, Does everything look correct?</h1>
+<h4 style="color:black">0
     @Html.DisplayNameFor(m => m.Email)<br />
     @Html.DisplayFor(m => m.Email)
     @Html.DisplayNameFor(m => m.ServiceDescription)<br />
