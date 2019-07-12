@@ -49,7 +49,7 @@ namespace MyCoreWebApp.Controllers
             model.RequestTypeDdl = CreateSelectList(Mylist);
 
             
-            return View("Create2", model);
+            return View("Create", model);
         }
 
         // Add Service Request options here if needed

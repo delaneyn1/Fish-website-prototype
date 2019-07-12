@@ -6,13 +6,13 @@
 
 
 <div class="jumbotron">
-    <h2>Create2 service page</h2>
+    <center><h2>Put in a Work Order</h2></center>
    <br />
     <p class="lead">Clean up this UI using bootstrap </p><br />
     0. Remove Custom CSS for now to help with making sure the bootstrap controls appears normal by default settings. <br />
-    1. Add Page title and relevant info like a description in the jumbotron. <br />
+    
     2. replace the HTML.Textbox to use Form Groups like done on the Service Description section below. <br />
-    3. Get rid of the HTML table  <br />
+    
     4. Update Navbar to point to Create2 instead of create <br />
     5. Remove the links in the Contact Page, Dont worry about the popup, just get the UI to follow the same look and feel as the other pages with a jumbotron and a paragraph...
     <hr />
@@ -23,7 +23,7 @@
 <h3><b>Please fill out the form for your service request</b></h3>
 @using (Html.BeginForm("Create2", "ServiceRequest", FormMethod.Post))
 {
-    <table>
+    
         <tr>
             <td>Enter ID: </td>
             <td>@Html.TextBox("RequestTypeId")</td>
@@ -32,10 +32,12 @@
             <td>Enter Name: </td>
             <td>@Html.TextBox("RequestName")</td>
         </tr>
+        <br />
+        
         <tr>
             @*<td colspan="2"><input type="submit" value="Submit"></td>*@
         </tr>
-    </table>
+    
     <div class="form-group">
         <label asp-for="ServiceDescription" class="control-label"></label>
         <input asp-for="ServiceDescription" class="form-control" />
@@ -53,10 +55,11 @@
 
     <div class="form-group">
         @Html.LabelFor(m => m.RequestTypeDdl)
-        @Html.DropDownListFor(m => m.RequestType, // 1. Store selected value in Model.RequestType;
-                                            // when page is rendered after postback,
-                                            // take selected value from Model.State.
-
+        @Html.DropDownListFor(m => m.RequestType,
+       // 1. Store selected value in Model.RequestType;
+       // when page is rendered after postback,
+       // take selected value from Model.State.
+     
                // 2. Take list of values from Model.States
                Model.RequestTypeDdl,
 
@@ -64,6 +67,7 @@
                "- Please select an option -",
 
                //4. A class name to assign to <select> tag
+     
                new { @class = "form-control" })
     </div>
 
