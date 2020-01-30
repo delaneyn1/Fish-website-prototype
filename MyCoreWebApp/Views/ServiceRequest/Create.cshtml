@@ -105,7 +105,9 @@
     ID: @ViewBag.Id<br />
     Name: @ViewBag.Name<br />
 </h4>
-
+<button type="button" class="btn btn-lg btn-primary" data-toggle="popover" data-placement="left" title="Popover title" data-content="And here's some amazing content. It's very engaging. Right?"><span class="glyphicon glyphicon-earphone"></span></button>
 @section Scripts {
     @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+
+    
 }

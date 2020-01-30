@@ -7,6 +7,7 @@
     <Authors>Patrick Delaney; Nick Delaney</Authors>
     <Company>Fish Tank Prototype</Company>
     <UserSecretsId>63b4b37b-5f29-4d8d-a102-a75309624b95</UserSecretsId>
+    <DockerDefaultTargetOS>Windows</DockerDefaultTargetOS>
   </PropertyGroup>
 
   <ItemGroup>
@@ -18,11 +19,14 @@
 
   <ItemGroup>
     <PackageReference Include="Bogus" Version="28.0.2" />
+    <PackageReference Include="bootstrap" Version="4.3.1" />
     <PackageReference Include="Microsoft.AspNetCore.All" Version="2.0.9" />
     <PackageReference Include="Microsoft.Azure.KeyVault" Version="3.0.3" />
     <PackageReference Include="Microsoft.Azure.Services.AppAuthentication" Version="1.2.0" />
     <PackageReference Include="Microsoft.NETCore.Platforms" Version="2.2.1" />
+    <PackageReference Include="Microsoft.VisualStudio.Azure.Containers.Tools.Targets" Version="1.4.10" />
     <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="2.0.4" />
+    <PackageReference Include="Microsoft.Web.LibraryManager.Build" Version="1.0.113" />
   </ItemGroup>
 
   <ItemGroup>

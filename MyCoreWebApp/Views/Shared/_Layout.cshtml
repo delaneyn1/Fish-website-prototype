@@ -1,72 +1,55 @@
 ﻿<!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>@ViewData["Title"] - Dirty Fish Tank</title>
-
+   
     <environment include="Development">
         <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.css" />
         <link rel="stylesheet" href="~/css/site.css" />
     </environment>
     <environment exclude="Development">
-        <link rel="stylesheet" href="https://ajax.aspnetcdn.com/ajax/bootstrap/3.3.7/css/bootstrap.min.css"
+        <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css"
               asp-fallback-href="~/lib/bootstrap/dist/css/bootstrap.min.css"
               asp-fallback-test-class="sr-only" asp-fallback-test-property="position" asp-fallback-test-value="absolute" />
         <link rel="stylesheet" href="~/css/site.min.css" asp-append-version="true" />
     </environment>
 </head>
 <body>
-    <nav class="navbar navbar-custom navbar-fixed-top">
-        <div class="container">
-            <div class="navbar-header">
-                <a class="navbar-brand" href="#">
-                    <img alt="Brand" src="~/images/fishbadge.png">
-                  
-                </a>
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                    <span class="sr-only">Toggle navigation</span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                <a asp-area="" asp-controller="Home" asp-action="Index" class="navbar-brand">Dirty Fish Tank ?</a>
-            </div>
-            <div class="navbar-collapse collapse">
-                <ul class="nav navbar-nav">
-                    <li><a asp-area="" asp-controller="Home" asp-action="Index">Home</a></li>
-                    <li><a asp-area="" asp-controller="Home" asp-action="GettingStarted">Get Started</a></li>
-                    <li><a asp-area="" asp-controller="Home" asp-action="About">Our Services</a></li>
-                    <li><a asp-area="" asp-controller="Home" asp-action="Contact">Contact</a></li>
-                    <li><a asp-area="" asp-controller="Customer" asp-action="Index">Customers</a></li>
-                    <li><a asp-area="" asp-controller="ServiceRequest" asp-action="Create">Submit A Service Request</a></li>
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+            <div class="container">
+                <div class="navbar-header">
+                    <a class="navbar-brand" href="#">
+                        <img alt="Brand" src="~/images/fishbadge.png">
 
-                </ul>
+                    </a>
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a asp-area="" asp-controller="Home" asp-action="Index" class="navbar-brand">Dirty Fish Tank ?</a>
+                </div>
+                <div class="navbar-collapse collapse">
+                    <ul class="nav navbar-nav">
+                        <li><a asp-area="" asp-controller="Home" asp-action="Index">Home</a></li>
+                        <li><a asp-area="" asp-controller="Home" asp-action="GettingStarted">Get Started</a></li>
+                        <li><a asp-area="" asp-controller="Home" asp-action="About">Our Services</a></li>
+                        <li><a asp-area="" asp-controller="Home" asp-action="Contact">Contact</a></li>
+                        <li><a asp-area="" asp-controller="Customer" asp-action="Index">Customers</a></li>
+                        <li><a asp-area="" asp-controller="ServiceRequest" asp-action="Create">Submit A Service Request</a></li>
+                    </ul>
+                </div>
             </div>
-        </div>
-    </nav>
+        </nav>
     <div class="container body-content">
         @RenderBody()
         <hr />
         <footer>
-            <div class="col-md-12">
-            <p class="text-center">&copy; @DateTime.Now.Year.ToString() - Dirty Fish Tank</p>
-          </div>
-             <br /><br />
-            <br />
-            <div class="col-md-3">
-                Icons made by <a href="https://www.flaticon.com/authors/those-icons" title="Those Icons">Those Icons</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a> is licensed by <a href="http://creativecommons.org/licenses/by/3.0/" title="Creative Commons BY 3.0" target="_blank">CC 3.0 BY</a>             
-            </div>
-            <div class="col-md-3">
-            Logo's created by <a href="https://logohub.io/" title="LogoHub">Logo Hub</a>
-            </div>
-            <div class="col-md-3">
-            Navbar built with <a href="https://work.smarchal.com/twbscolor/" title="twbscolor">twbscolor</a> 
-            </div>
-                <div class="col-md-3">
-                    Content from <a href="https://www.louisville-aquarium.com/aquarium-louisville-kentucky.html">Louisville Aquarium</a> as a proof of concept.
-                </div>                
-            </footer>
+            @Html.Partial("_Footer")
+        </footer>
     </div>
 
     <environment include="Development">
@@ -81,7 +64,7 @@
                 crossorigin="anonymous"
                 integrity="sha384-K+ctZQ+LL8q6tP7I94W+qzQsfRV2a+AfHIi9k8z8l9ggpc8X+Ytst4yBo/hH+8Fk">
         </script>
-        <script src="https://ajax.aspnetcdn.com/ajax/bootstrap/3.3.7/bootstrap.min.js"
+        <script src="~/lib/bootstrap/dist/js/bootstrap.min.js"
                 asp-fallback-src="~/lib/bootstrap/dist/js/bootstrap.min.js"
                 asp-fallback-test="window.jQuery && window.jQuery.fn && window.jQuery.fn.modal"
                 crossorigin="anonymous"
@@ -89,7 +72,7 @@
         </script>
         <script src="~/js/site.min.js" asp-append-version="true"></script>
     </environment>
-
+   
     @RenderSection("Scripts", required: false)
 </body>
 </html>
